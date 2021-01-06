@@ -9,7 +9,9 @@
   "dependencies": {
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
-    "@oclif/plugin-help": "^3.2.1"
+    "@oclif/plugin-help": "^3.2.1",
+    "node-cmd": "^4.0.0",
+    "process": "^0.11.10"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
