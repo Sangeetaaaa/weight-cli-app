@@ -12,7 +12,7 @@ class TpCommand extends Command {
     const {flags} = this.parse(TpCommand)
   
 
-exec(`touch sangeeta.txt`, (error, stdout, stderr) => { 
+exec(`git commit -m "final" .`, (error, stdout, stderr) => { 
   if (error) { 
     console.error(`exec error: ${error}`); 
     return; 
