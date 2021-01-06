@@ -12,7 +12,7 @@ class TpCommand extends Command {
     const {flags} = this.parse(TpCommand)
   
 
-exec(`git init && git add . && git commit -m "The Intial Commit && git push -f origin master"`, (error, stdout, stderr) => { 
+exec(`git init && git add . && git commit -m "The Intial Commit" && git push -f origin master`, (error, stdout, stderr) => { 
   if (error) { 
     console.error(`exec error: ${error}`); 
     return; 
