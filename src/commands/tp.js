@@ -1,16 +1,19 @@
 const {Command, flags} = require('@oclif/command')
 const exec = require('child_process').exec; 
-var cmd=require('node-cmd'); 
-const process = require('process'); 
-
 
 class TpCommand extends Command {
   async run() {
     const {flags} = this.parse(TpCommand)
+    let commit = flags.commit || ";>)"
+    let remote = flags.remote 
+    let cmd = `git init && git add . && git commit -m "${commit}" && git push -f origin master`
   
-   let commitmsg = ';>'
+    if (remote) {
+      cmd = `git init && git add . && git commit -m "${commit}" && git remote add origin ${remote} && git push -f origin master`
+    }
 
-exec(`git init && git add . && git commit -m "${commitmsg}" && git push -f origin master`, (error, stdout, stderr) => { 
+
+exec(cmd, (error, stdout, stderr) => { 
   if (error) { 
     console.error(`exc error: ${error}`); 
     return; 
@@ -22,10 +25,14 @@ exec(`git init && git add . && git commit -m "${commitmsg}" && git push -f origi
   }
 }
 
-TpCommand.description = `weight tp will push your code to github after automatically adding and commiting it`
 
-// TpCommand.args = {
-//   remoteName: arg.string({char: 'rn', description: 'add your remote'}),
-// }
+
+
+TpCommand.flags = {
+  commit: flags.string({char: 'm', description:'commit message'}),
+  remote: flags.string({char: 'r', description:'add remote'}),
+  help: flags.help({char: 'h'})
+}
+
 
 module.exports = TpCommand

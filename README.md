@@ -29,10 +29,11 @@ USAGE
 # Commands
 <!-- commands -->
 * [`weight add WEIGHT`](#weight-add-weight)
+* [`weight addRemote`](#weight-addremote)
 * [`weight hello`](#weight-hello)
 * [`weight help [COMMAND]`](#weight-help-command)
 * [`weight show`](#weight-show)
-* [`weight tp`](#weight-tp)
+* [`weight tp REMOTE`](#weight-tp-remote)
 
 ## `weight add WEIGHT`
 
@@ -51,6 +52,24 @@ DESCRIPTION
 ```
 
 _See code: [src/commands/add.js](https://github.com/weight/weight/blob/v0.0.0/src/commands/add.js)_
+
+## `weight addRemote`
+
+Describe the command here
+
+```
+USAGE
+  $ weight addRemote
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/addRemote.js](https://github.com/weight/weight/blob/v0.0.0/src/commands/addRemote.js)_
 
 ## `weight hello`
 
@@ -106,20 +125,16 @@ DESCRIPTION
 
 _See code: [src/commands/show.js](https://github.com/weight/weight/blob/v0.0.0/src/commands/show.js)_
 
-## `weight tp`
+## `weight tp REMOTE`
 
-Describe the command here
+weight tp will push your code to github after automatically adding and commiting it
 
 ```
 USAGE
-  $ weight tp
+  $ weight tp REMOTE
 
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+ARGUMENTS
+  REMOTE  Add a remote as an argument with weight tp
 ```
 
 _See code: [src/commands/tp.js](https://github.com/weight/weight/blob/v0.0.0/src/commands/tp.js)_
