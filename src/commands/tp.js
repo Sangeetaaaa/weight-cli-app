@@ -8,13 +8,14 @@ class TpCommand extends Command {
   async run() {
     const {flags} = this.parse(TpCommand)
   
+   let commitmsg = ';>'
 
-exec(`git init && git add . && git commit -m "💓" && git push -f origin master`, (error, stdout, stderr) => { 
+exec(`git init && git add . && git commit -m "${commitmsg}" && git push -f origin master`, (error, stdout, stderr) => { 
   if (error) { 
     console.error(`exc error: ${error}`); 
     return; 
   } 
-  console.log(`Your code has been pushed :>) ${stdout}`); 
+  console.log(` ${stdout} Your code has been pushed :>)`); 
   if (stderr!= "") 
   console.error(`stderr: ${stderr}`); 
 }); 
