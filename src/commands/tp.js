@@ -1,5 +1,7 @@
 const {Command, flags} = require('@oclif/command')
-const exec = require('child_process').exec;
+const exec = require('child_process').exec; 
+var cmd=require('node-cmd'); 
+const process = require('process'); 
 
 
 class TpCommand extends Command {
@@ -7,20 +9,22 @@ class TpCommand extends Command {
     const {flags} = this.parse(TpCommand)
   
 
-exec(`git init && git add . && git commit -m "The Intial Commit" && git push -f origin master`, (error, stdout, stderr) => { 
+exec(`git init && git add . && git commit -m "💓" && git push -f origin master`, (error, stdout, stderr) => { 
   if (error) { 
     console.error(`exc error: ${error}`); 
     return; 
   } 
-  console.log(`stdout: No. of directories = ${stdout}`); 
+  console.log(`Your code has been pushed :>) ${stdout}`); 
   if (stderr!= "") 
   console.error(`stderr: ${stderr}`); 
 }); 
   }
 }
 
-TpCommand.description = `Describe the command here
-...
-Extra documentation goes here
-`
+TpCommand.description = `weight tp will push your code to github after automatically adding and commiting it`
+
+// TpCommand.args = {
+//   remoteName: arg.string({char: 'rn', description: 'add your remote'}),
+// }
+
 module.exports = TpCommand
